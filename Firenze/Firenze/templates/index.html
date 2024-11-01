@@ -1,41 +1,39 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
 
-    <!-- Basic -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	{% load static %}
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-   
-    <!-- Mobile Metas -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-     <!-- Site Metas -->
-    <title>StyleBarber - Bootstrap 4 Responsive HTML5 Template</title>  
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    
+    <!-- Page Title and Meta Descriptions -->
+    <title>StyleBarber - Responsive Template</title>
+    <meta name="description" content="StyleBarber - Bootstrap 4 Responsive HTML5 Template">
+    <meta name="keywords" content="StyleBarber, barber, salon, HTML5, Bootstrap">
     <meta name="author" content="">
 
+     <!-- Favicon and Touch Icon -->
+	 <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+	 <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+ 
+	 <!-- CSS Stylesheets -->
+	 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	 <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+	 <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	 <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+	 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-	<!-- Site Icons -->
-	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
-	
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-	<!-- Site CSS -->
-	<link rel="stylesheet" href="{% static 'style.css' %}">
-	<!-- ALL VERSION CSS -->
-	<link rel="stylesheet" href="{% static 'css/versions.css' %}">
-	<!-- Responsive CSS -->
-	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!-- IE Compatibility Scripts -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
+
+
 <body class="barber_version">
 
     <!-- LOADER -->
@@ -230,8 +228,8 @@
 							
 							<div class="service-widget">
 								<div class="post-media wow fadeIn">
-									<a href="uploads/barber_05.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-									<img src="uploads/barber_05.jpg" alt="" class="img-responsive img-rounded">
+									<a href="{% static 'uploads/barber_05.jpg' %}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+									<img src="{% static 'uploads/barber_05.jpg' %}" alt="" class="img-responsive img-rounded">
 								</div>
 								<div class="dit-box">
 									<h3>The Barber Materials</h3>
@@ -241,8 +239,9 @@
 							
 							<div class="service-widget">
 								<div class="post-media wow fadeIn">
-									<a href="uploads/barber_06.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-									<img src="uploads/barber_06.jpg" alt="" class="img-responsive img-rounded">
+									<a href="{% static 'uploads/barber_06.jpg' %}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+									<img src="{% static 'uploads/barber_06.jpg' %}" alt="" class="img-responsive img-rounded">
+
 								</div>
 								<div class="dit-box">
 									<h3>The Barber Materials</h3>
@@ -362,7 +361,8 @@
 						<div class="widget our-inner-taem clearfix">
 							<div class="t-top"></div>
 							<div class="hover-br">
-								<img src="uploads/barber_team_01.jpg" alt="" class="img-responsive">
+								<img src="{% static 'uploads/barber_team_01.jpg' %}" alt="" class="img-responsive">
+
 								<div class="social-up-hover">
 									<div class="footer-social">
 										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
@@ -388,7 +388,8 @@
 						<div class="widget our-inner-taem clearfix">
 							<div class="t-top"></div>
 							<div class="hover-br">
-								<img src="uploads/barber_team_03.jpg" alt="" class="img-responsive">
+								<img src="{% static 'uploads/barber_team_03.jpg' %}" alt="" class="img-responsive">
+
 								<div class="social-up-hover">
 									<div class="footer-social">
 										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
@@ -414,7 +415,8 @@
 						<div class="widget our-inner-taem clearfix">
 							<div class="t-top"></div>
 							<div class="hover-br">
-								<img src="uploads/barber_team_02.jpg" alt="" class="img-responsive">
+								<img src="{% static 'uploads/barber_team_02.jpg' %}" alt="" class="img-responsive">
+
 								<div class="social-up-hover">
 									<div class="footer-social">
 										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
@@ -454,7 +456,8 @@
 							<div class="testimonial clearfix">
 								<div class="testi-meta">
 									<i class="fa fa-quote-right"></i>
-									<img src="uploads/testi_01.png" alt="" class="img-responsive alignright">
+									<img src="{% static 'uploads/testi_01.png' %}" alt="" class="img-responsive alignright">
+
 									<h4>James Fernando <small>- Manager of Racer</small></h4>
 								</div>
 								<div class="desc">
@@ -467,7 +470,8 @@
 							<div class="testimonial clearfix">
 								<div class="testi-meta">
 									<i class="fa fa-quote-right"></i>
-									<img src="uploads/testi_02.png" alt="" class="img-responsive alignright">
+									<img src="{% static 'uploads/testi_02.png' %}" alt="" class="img-responsive alignright">
+
 									<h4>Jacques Philips <small>- Designer</small></h4>
 								</div>
 								<div class="desc">
@@ -480,7 +484,8 @@
 							<div class="testimonial clearfix">
 								<div class="testi-meta">
 									<i class="fa fa-quote-right"></i>
-									<img src="uploads/testi_03.png" alt="" class="img-responsive alignright">
+									<img src="{% static 'uploads/testi_03.png' %}" alt="" class="img-responsive alignright">
+
 									<h4>Venanda Mercy <small>- Newyork City</small></h4>
 								</div>
 								<div class="desc">
@@ -493,7 +498,8 @@
 							<div class="testimonial clearfix">
 								<div class="testi-meta">
 									<i class="fa fa-quote-right"></i>
-									<img src="uploads/testi_03.png" alt="" class="img-responsive alignright">
+									<img src="{% static 'uploads/testi_03.png' %}" alt="" class="img-responsive alignright">
+
 									<h4>Venanda Mercy <small>- Newyork City</small></h4>
 								</div>
 								<div class="desc">
@@ -530,10 +536,9 @@
     
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
-    <!-- ALL JS FILES -->
-    <script src="js/all.js"></script>
-	<script src="js/responsive-tabs.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
+	<script src="{% static 'js/all.js' %}"></script>
+	<script src="{% static 'js/responsive-tabs.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+	<script src="{% static 'js/map.js' %}"></script>
 </body>
 </html>
