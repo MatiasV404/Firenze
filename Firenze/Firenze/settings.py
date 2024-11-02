@@ -127,3 +127,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Configuración del correo en settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Servidor SMTP de Gmail
+EMAIL_PORT = 587  # Puerto para TLS
+EMAIL_USE_TLS = True  # Usar TLS
+EMAIL_HOST_USER = 'cristiangaete32@gmail.com'  # Tu dirección de correo
+EMAIL_HOST_PASSWORD = 'tu_contraseña'  # Tu contraseña de correo (o token de aplicación)
+DEFAULT_FROM_EMAIL = 'cristiangaete32@gmail.com'  # Opcional, pero recomendado

@@ -36,22 +36,7 @@
 
 <body class="barber_version">
 
-    <!-- LOADER -->
-    <div id="preloader">
-        <div class="cube-wrapper">
-		  <div class="cube-folding">
-			<span class="leaf1"></span>
-			<span class="leaf2"></span>
-			<span class="leaf3"></span>
-			<span class="leaf4"></span>
-		  </div>
-		  <div class="mus">
-			<img src="{% static 'images/lode-img.png' %}" alt="" />
-		  </div>
-		  <span class="loading" data-name="Loading">Firenze Cargando..</span>
-		</div>
-    </div><!-- end loader -->
-    <!-- END LOADER -->
+
 
 	<!-- Start header -->
 	<header class="top-navbar">
@@ -70,7 +55,7 @@
 						<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
 						<li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Nuestros servicios</a></li>
 						<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'barbers' %}">Nuestros Profesionales</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'barbers' %}">Productos</a></li>
 						<li class="nav-item"><a class="nav-link" href="{% url 'appointment' %}">Agenda tu cita</a></li>
 						<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contacto</a></li>
 						
@@ -81,6 +66,9 @@
 	</header>
 	<!-- End header -->
 
+
+
+	<!-- CArrusel -->
 	<div id="home" class="parallax">
 		<div id="full-width" class="owl-carousel owl-theme home-hero">
 			<div class="text-center item slider-01 display-table overlay">
@@ -115,31 +103,11 @@
 		</div>
 	</div><!-- end section -->
 		
-	<!-- Page Content -->
+	<!-- QUIENES SOMOS -->
 	<div id="page-content-wrapper">			
-		<div class="section wb">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-md-6 text-left">
-						<div class="message-box">
-							<h4>Nosotros</h4>
-							<h2>Bienvenidos a Firenze</h2>
-							<p class="lead"></p>
+			
 
-							<p> En nuestro centro de estética, ofrecemos un cuidado integral para quienes buscan un estilo completo, con el respaldo de un servicio de excelencia que combina tradición y modernidad. Inspirados en las clásicas barberías de antaño y complementados con el arte de la manicura, te brindamos un espacio único donde cada detalle cuenta. Disfruta de una atención personalizada y de primer nivel, junto con un catálogo de productos de alta calidad y stock permanente. Ven, descubre y experimenta el arte del cuidado personal en un lugar diseñado para realzar tu estilo. ¡Te esperamos para transformar cada visita en una experiencia única! </p>
-
-							<a href="{% url 'services' %}" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Conoce mas de nuestros servicios</a>
-						</div><!-- end messagebox -->
-					</div><!-- end col -->
-					<div class="col-md-6 text-center">
-						<div class="right-box">
-							<img class="img-fluid" src="{% static 'uploads/about-img.jpg' %}" alt="" />
-						</div>
-					</div><!-- end col -->
-				</div><!-- end row -->
-				
-				<hr class="hr1"> 
-				
+		<!-- PRECIOS  -->		
 		<div id="pricing" class="section lb">
 				<div class="container">
 					<div class="section-title row text-center">
@@ -229,93 +197,183 @@
 			</div>
 		</div>
 		
+		<!-- CARTAS DE BARBEROS -->
+		<div id="barbers" class="section lb">
+			<div class="container">
+				<div class="section-title row text-center">
+					<div class="col-md-8 offset-md-2">
+						<small>Conoce a nuestro equipo</small>
+						<h3>Nuestros barberos</h3>
+					</div>
+				</div><!-- end title -->
+
+				<div class="row dev-list text-center">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+						<div class="widget our-inner-taem clearfix">
+							<div class="t-top"></div>
+							<div class="hover-br">
+								<img src="{% static 'uploads/barber_team_01.jpg' %}" alt="Foto de Carlos Núñez" class="img-responsive">
+
+								<div class="social-up-hover">
+									<div class="footer-social">
+										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="team-box">
+								<div class="widget-title">
+									<h3>Carlos Núñez</h3>
+									<small>Fundador y Director Creativo</small>
+								</div>
+								<!-- end title -->
+								<p>Carlos lleva más de 15 años en la industria y es el alma detrás de nuestro estilo único. Le apasiona crear cortes personalizados que reflejan la personalidad de cada cliente.</p>
+							</div>
+							<div class="t-bottom"></div>
+						</div><!--widget -->
+					</div><!-- end col -->
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+						<div class="widget our-inner-taem clearfix">
+							<div class="t-top"></div>
+							<div class="hover-br">
+								<img src="{% static 'uploads/barber_team_03.jpg' %}" alt="Foto de Felipe Salinas" class="img-responsive">
+
+								<div class="social-up-hover">
+									<div class="footer-social">
+										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="team-box">
+								<div class="widget-title">
+									<h3>Felipe Salinas</h3>
+									<small>Barbero Senior</small>
+								</div>
+								<!-- end title -->
+								<p>Felipe es un experto en técnicas de barbería modernas y clásicas. Con más de 8 años de experiencia, siempre busca perfeccionar cada detalle en el corte y la barba de sus clientes.</p>
+							</div>
+							<div class="t-bottom"></div>
+						</div><!--widget -->
+					</div><!-- end col -->
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+						<div class="widget our-inner-taem clearfix">
+							<div class="t-top"></div>
+							<div class="hover-br">
+								<img src="{% static 'uploads/barber_team_02.jpg' %}" alt="Foto de Martín Araya" class="img-responsive">
+
+								<div class="social-up-hover">
+									<div class="footer-social">
+										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="team-box">
+								<div class="widget-title">
+									<h3>Martín Araya</h3>
+									<small>Especialista en Estilo Urbano</small>
+								</div>
+								<!-- end title -->
+								<p>Martín es un apasionado del estilo urbano y actual. Con un enfoque fresco y creativo, aporta una visión moderna a cada corte y trabaja para realzar el look de cada cliente.</p>
+							</div>
+							<div class="t-bottom"></div>
+						</div><!--widget -->
+					</div><!-- end col -->
+				</div><!-- end row -->
+			</div><!-- end container -->
+		</div><!-- end section -->
+
+
+		<!--Cartas  MANICURAS -->
+		<div id="barbers" class="section lb">
+			<div class="container">
+				<div class="section-title row text-center">
+					<div class="col-md-8 offset-md-2">
+						<small>Conoce a nuestro equipo</small>
+						<h3>Nuestras manicuristas</h3>
+					</div>
+				</div><!-- end title -->
 		
-		<div id="barbers" class="section lb">
-			<div class="container">
-				<div class="section-title row text-center">
-					<div class="col-md-8 offset-md-2">
-					<small>Conoce a nuestro equipo</small>
-					<h3>Nuestros barberos</h3>
-					</div>
-				</div><!-- end title -->
-
 				<div class="row dev-list text-center">
+					<!-- Manicurista 1 -->
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
 						<div class="widget our-inner-taem clearfix">
 							<div class="t-top"></div>
 							<div class="hover-br">
-								<img src="{% static 'uploads/barber_team_01.jpg' %}" alt="" class="img-responsive">
-
+								<img src="{% static 'uploads/mani2.jpg' %}" alt="" class="img-responsive">
 								<div class="social-up-hover">
 									<div class="footer-social">
 										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-instagram"></i></a>
 										<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
 									</div>
 								</div>
 							</div>
 							<div class="team-box">
 								<div class="widget-title">
-									<h3>Soren Bo Bostian</h3>
-									<small>The Founder</small>
+									<h3>María González</h3>
+									<small>Especialista en Manicure</small>
 								</div>
-								<!-- end title -->
-								<p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of The Barber Shop Company.</p>
+								<p>Con más de 8 años de experiencia, María es experta en manicura y pedicura. Su pasión por el diseño de uñas y su atención al detalle garantizan un resultado perfecto en cada sesión.</p>
 							</div>
 							<div class="t-bottom"></div>
 						</div><!--widget -->
 					</div><!-- end col -->
-
+		
+					<!-- Manicurista 2 -->
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
 						<div class="widget our-inner-taem clearfix">
 							<div class="t-top"></div>
 							<div class="hover-br">
-								<img src="{% static 'uploads/barber_team_03.jpg' %}" alt="" class="img-responsive">
-
+								<img src="{% static 'uploads/mani.webp' %}" alt="" class="img-responsive">
 								<div class="social-up-hover">
 									<div class="footer-social">
 										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-instagram"></i></a>
 										<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
 									</div>
 								</div>
 							</div>
 							<div class="team-box">
 								<div class="widget-title">
-									<h3>Bryan Saftler</h3>
-									<small>The Barber</small>
+									<h3>Carla Díaz</h3>
+									<small>Diseñadora de Uñas</small>
 								</div>
-								<!-- end title -->
-								<p>Hello guys, I am Soren from Sirbistana. I am senior art director and barber of the Barber Shop Market.</p>
+								<p>Carla se especializa en diseños creativos y modernos. Con un enfoque en las últimas tendencias, ofrece servicios personalizados que resaltan la belleza y el estilo individual de cada cliente.</p>
 							</div>
 							<div class="t-bottom"></div>
 						</div><!--widget -->
 					</div><!-- end col -->
-
+		
+					<!-- Manicurista 3 -->
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
 						<div class="widget our-inner-taem clearfix">
 							<div class="t-top"></div>
 							<div class="hover-br">
-								<img src="{% static 'uploads/barber_team_02.jpg' %}" alt="" class="img-responsive">
-
+								<img src="{% static 'uploads/mani3.webp' %}" alt="" class="img-responsive">
 								<div class="social-up-hover">
 									<div class="footer-social">
 										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+										<a href="#" class="btn grd1"><i class="fa fa-instagram"></i></a>
 										<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
 									</div>
 								</div>
 							</div>
 							<div class="team-box">
 								<div class="widget-title">
-									<h3>Matthew Bayliss</h3>
-									<small>The Barber</small>
+									<h3>Laura Rodríguez</h3>
+									<small>Especialista en Uñas Acrílicas</small>
 								</div>
-								<!-- end title -->
-								<p>Hello guys, I am Soren from Sirbistana. I am senior art director and barber of the Barber Shop Website.</p>
+								<p>Laura es conocida por su precisión y habilidad en la aplicación de uñas acrílicas. Su técnica avanzada garantiza un acabado natural y duradero, siempre con un toque de elegancia.</p>
 							</div>
 							<div class="t-bottom"></div>
 						</div><!--widget -->
@@ -323,100 +381,10 @@
 				</div><!-- end row -->
 			</div><!-- end container -->
 		</div><!-- end section -->
+		
 
-		<div id="barbers" class="section lb">
-			<div class="container">
-				<div class="section-title row text-center">
-					<div class="col-md-8 offset-md-2">
-					<small>Conoce a nuestro equipo</small>
-					<h3>Nuestras manicuristas</h3>
-					</div>
-				</div><!-- end title -->
 
-				<div class="row dev-list text-center">
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-						<div class="widget our-inner-taem clearfix">
-							<div class="t-top"></div>
-							<div class="hover-br">
-								<img src="{% static 'uploads/barber_team_01.jpg' %}" alt="" class="img-responsive">
-
-								<div class="social-up-hover">
-									<div class="footer-social">
-										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-box">
-								<div class="widget-title">
-									<h3>Soren Bo Bostian</h3>
-									<small>The Founder</small>
-								</div>
-								<!-- end title -->
-								<p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of The Barber Shop Company.</p>
-							</div>
-							<div class="t-bottom"></div>
-						</div><!--widget -->
-					</div><!-- end col -->
-
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-						<div class="widget our-inner-taem clearfix">
-							<div class="t-top"></div>
-							<div class="hover-br">
-								<img src="{% static 'uploads/barber_team_03.jpg' %}" alt="" class="img-responsive">
-
-								<div class="social-up-hover">
-									<div class="footer-social">
-										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-box">
-								<div class="widget-title">
-									<h3>Bryan Saftler</h3>
-									<small>The Barber</small>
-								</div>
-								<!-- end title -->
-								<p>Hello guys, I am Soren from Sirbistana. I am senior art director and barber of the Barber Shop Market.</p>
-							</div>
-							<div class="t-bottom"></div>
-						</div><!--widget -->
-					</div><!-- end col -->
-
-					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-						<div class="widget our-inner-taem clearfix">
-							<div class="t-top"></div>
-							<div class="hover-br">
-								<img src="{% static 'uploads/barber_team_02.jpg' %}" alt="" class="img-responsive">
-
-								<div class="social-up-hover">
-									<div class="footer-social">
-										<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-										<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-box">
-								<div class="widget-title">
-									<h3>Matthew Bayliss</h3>
-									<small>The Barber</small>
-								</div>
-								<!-- end title -->
-								<p>Hello guys, I am Soren from Sirbistana. I am senior art director and barber of the Barber Shop Website.</p>
-							</div>
-							<div class="t-bottom"></div>
-						</div><!--widget -->
-					</div><!-- end col -->
-				</div><!-- end row -->
-			</div><!-- end container -->
-		</div><!-- end section -->
+		<!--Testimonios -->
 		<div id="testimonials" class="parallax section db parallax-inner-bg">
 			<div class="container">
 				<div class="section-title row text-center">
@@ -459,24 +427,26 @@
 			</div><!-- end container -->
 		</div><!-- end section -->
 
+
+		<!-- Footer -->
 		<div class="copyrights">
 			<div class="container">
 				<div class="footer-distributed">
 					<div class="footer-left">
 						<p class="footer-links">
-							<a href="#">Home</a>
-							<a href="#">Blog</a>
-							<a href="#">Pricing</a>
-							<a href="#">About</a>
-							<a href="#">Faq</a>
-							<a href="#">Contact</a>
+							<a href="{% url 'index' %}">Inicio</a>
+							<a href="{% url 'services' %}">Servicios</a>
+							<a href="{% url 'about' %}">Acerca de</a>
+							<a href="{% url 'barbers' %}">Nuestro Equipo</a>
+							<a href="{% url 'appointment' %}">Cita</a>
+							<a href="{% url 'contact' %}">Contacto</a>
 						</p>
-						<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">StyleBarber</a> Design By : <a href="https://html.design/">html design</a></p>
+						<p class="footer-company-name">Todos los derechos reservados. &copy; 2024 <a href="{% url 'index' %}">Firenze</a></a></p>
 					</div>
 				</div>
 			</div><!-- end container -->
 		</div><!-- end copyrights -->
-	</div>
+
     
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
