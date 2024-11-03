@@ -4,8 +4,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.conf import settings
 from .forms import AppointmentForm  # Asegúrate de que tienes un formulario creado
 from django.views.decorators.csrf import csrf_exempt
-
-
+from .forms import UserCreationForm
+from django.contrib.auth import login, authenticate
 
 
 def index(request):
@@ -44,8 +44,16 @@ def appointment(request):
 def barbers(request):
     return render(request, 'barbers.html')
 
-def contact(request):
-    return render(request, 'contact.html')
+def registro(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('index.html')  # Redirige a la página principal o la que prefieras
+    else:
+        form = UserCreationForm()
+    return render(request, 'registro.html', {'form': form})
 
 def services(request):
     return render(request, 'services.html')
