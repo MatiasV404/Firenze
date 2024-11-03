@@ -1,0 +1,131 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Page Title and Meta Descriptions -->
+	<title>Firenze </title>
+	<meta name="description" content="StyleBarber - Bootstrap 4 Responsive HTML5 Template">
+	<meta name="keywords" content="StyleBarber, barber, salon, HTML5, Bootstrap">
+	<meta name="author" content="">
+
+	<!-- Favicon and Touch Icon -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+	<!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/versions.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="barber_version">
+
+    <!-- Start header -->
+    <header class="top-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbars-rs-food">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Nuestros servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'barbers' %}">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'appointment' %}">Agenda tu cita</a></li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
+
+
+    <div id="login" class="section wb">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <small>INICIA SESIÓN EN TU CUENTA</small>
+                    <h3>Login</h3>
+                </div>
+            </div><!-- end title -->
+    
+            <div class="row">
+                <div class="col-md-6 offset-md-3"> <!-- Ajustado a 6 columnas para centrar mejor -->
+                    <div class="login_form">
+                        <div id="message"></div>
+                        <form id="loginform" class="row" action="{% url 'login' %}" method="post">
+                            {% csrf_token %}
+                            <fieldset class="row">
+                                <div class="col-12 mb-3"> <!-- Espaciado inferior -->
+                                    <input type="text" name="username" id="username" class="form-control"
+                                           placeholder="Nombre de usuario" required>
+                                </div>
+                                <div class="col-12 mb-3"> <!-- Espaciado inferior -->
+                                    <input type="password" name="password" id="password" class="form-control"
+                                           placeholder="Contraseña" required>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" value="LOGIN" id="submit"
+                                            class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Iniciar sesión</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+    
+
+	<!-- Footer -->
+	<div class="copyrights">
+		<div class="container">
+			<div class="footer-distributed">
+				<div class="footer-left">
+					<p class="footer-links">
+						<a href="{% url 'index' %}">Inicio</a>
+						<a href="{% url 'services' %}">Servicios</a>
+						<a href="{% url 'about' %}">Acerca de</a>
+						<a href="{% url 'barbers' %}">Nuestro Equipo</a>
+						<a href="{% url 'appointment' %}">Cita</a>
+					</p>
+					<p class="footer-company-name">Todos los derechos reservados. &copy; 2024 <a
+							href="{% url 'index' %}">Firenze</a></a></p>
+				</div>
+			</div>
+		</div><!-- end container -->
+	</div><!-- end copyrights -->
+
+	<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+	<script src="{% static 'js/responsive-tabs.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
