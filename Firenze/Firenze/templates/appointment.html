@@ -12,216 +12,165 @@
     <meta name="keywords" content="StyleBarber, barber, salon, HTML5, Bootstrap">
     <meta name="author" content="">
 
-     <!-- Favicon and Touch Icon -->
-	 <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-	 <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    <!-- Favicon and Touch Icon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
  
-	 <!-- CSS Stylesheets -->
-	 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-	 <link rel="stylesheet" href="{% static 'css/versions.css' %}">
-	 <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-	 <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-	 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
-	 
-
-    <!-- IE Compatibility Scripts -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
 </head>
 
 <body class="barber_version">
 
     <!-- Start header -->
-	<header class="top-navbar">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container">
-				<a class="navbar-brand" href="{% url 'index' %}">
-					<img src="{% static 'images/logo.png' %}" alt="" />
-				</a>
-				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="icon-bar top-bar"></span>
-					<span class="icon-bar middle-bar"></span>
-					<span class="icon-bar bottom-bar"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbars-rs-food">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Nuestros servicios</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'barbers' %}">Productos</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'appointment' %}">Agenda tu cita</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contacto</a></li>
-						
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
-	<!-- End header -->
+    <header class="top-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbars-rs-food">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Nuestros servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'barbers' %}">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'appointment' %}">Agenda tu cita</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
 
-	<!-- Page Content -->
-	<div id="page-content-wrapper">
-		<div id="appointment" class="section wb">
-			<div class="container">
-				<div class="section-title row text-center">
-					<div class="col-md-8 offset-md-2">
-						<small>¡HAGAMOS UNA CITA PARA TU VIDA!</small>
-						<h3>Reserva ahora</h3>
-					</div>
-				</div><!-- end title -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div id="appointment" class="section wb">
+            <div class="container">
+                <div class="section-title row text-center">
+                    <div class="col-md-8 offset-md-2">
+                        <small>¡HAGAMOS UNA CITA PARA TU VIDA!</small>
+                        <h3>Reserva ahora</h3>
+                    </div>
+                </div><!-- end title -->
 
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="contact_form">
-							<div id="message"></div>
-							<form id="contactform" method="POST" action="{% url 'appointment' %}">
-								{% csrf_token %}
-								<fieldset class="row row-fluid">
-									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<input type="text" name="first_name" id="first_name" class="form-control" placeholder="Nombre" required>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<input type="text" name="last_name" id="last_name" class="form-control" placeholder="Apellido" required>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<input type="email" name="email" id="email" class="form-control" placeholder="Tu Correo" required>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<input type="text" name="phone" id="phone" class="form-control" placeholder="Tu Teléfono" required>
-									</div>
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-										<select id="service" name="service" class="form-control" required>
-											<option value="" disabled selected>Selecciona un Servicio</option>
-											<option value="Corte de Cabello">Corte de Cabello</option>
-											<option value="Perfilado de Barba">Perfilado de Barba</option>
-											<option value="Servicio Completo">Servicio Completo</option>
-											<option value="Perfilado de Cejas">Perfilado de Cejas</option>
-											<option value="Manicure Completo">Manicure Completo</option>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="contact_form">
+                            <div id="message"></div>
+                            <form id="contactform" method="POST" action="{% url 'appointment' %}">
+                                {% csrf_token %}
+                                <fieldset class="row row-fluid">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Nombre" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Apellido" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Tu Correo" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Tu Teléfono" required>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <select id="service" name="service" class="form-control" required>
+                                            <option value="" disabled selected>Selecciona un Servicio</option>
+                                            <option value="corte">Corte de Cabello</option>
+                                            <option value="perfilado">Perfilado de Barba</option>
+                                            <option value="manicure">Manicure Completo</option>
+                                            <option value="pedicure">Pedicure Completo</option>
 											<option value="Extensiones de Uñas">Extensiones de Uñas</option>
-											<option value="Pedicure Completo">Pedicure Completo</option>
 											<option value="Diseño de Uñas">Diseño de Uñas</option>
 											<option value="Tratamiento de Hidratación">Tratamiento de Hidratación</option>
-										</select>
-									</div>
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-										<input type="date" name="date" class="form-control" required>
-									</div>
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-										<select id="time" name="time" class="form-control" required>
-											<option value="" disabled selected>Selecciona Hora</option>
-											<option value="10:00">10:00</option>
-											<option value="10:30">10:30</option>
-											<option value="11:00">11:00</option>
-											<option value="11:30">11:30</option>
-											<option value="12:00">12:00</option>
-											<option value="15:00">15:00</option>
-											<option value="15:30">15:30</option>
-											<option value="16:00">16:00</option>
-											<option value="16:30">16:30</option>
-											<option value="17:00">17:00</option>
-											<option value="17:30">17:30</option>
-											<option value="18:00">18:00</option>
-											<option value="18:30">18:30</option>
-											<option value="19:00">19:00</option>
-											<option value="19:30">19:30</option>
-										</select>
-									</div>
-									<div class="form-btn text-center">
-										<button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Solicitar Cita</button>
-									</div>
-								</fieldset>
-							</form>
-						</div>
-					</div><!-- end col -->
-				</div><!-- end row -->
-			</div><!-- end container -->
-		</div><!-- end section -->
-	</div>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <input type="date" name="date" class="form-control" required>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <select id="appointment_time" name="time" class="form-control" required>
+                                            <option value="" disabled selected>Selecciona Hora</option>
+                                            <!-- Horarios se añadirán dinámicamente aquí -->
+                                        </select>
+                                    </div>
+                                    <div class="form-btn text-center">
+                                        <button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Solicitar Cita</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end section -->
+    </div>
 
+    <!-- Footer -->
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-links">
+                        <a href="{% url 'index' %}">Inicio</a>
+                        <a href="{% url 'services' %}">Servicios</a>
+                        <a href="{% url 'about' %}">Acerca de</a>
+                        <a href="{% url 'barbers' %}">Nuestro Equipo</a>
+                        <a href="{% url 'appointment' %}">Cita</a>
+                        <a href="{% url 'contact' %}">Contacto</a>
+                    </p>
+                    <p class="footer-company-name">Todos los derechos reservados. &copy; 2024 <a href="{% url 'index' %}">Firenze</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
-    	<!-- Footer -->
-		<div class="copyrights">
-			<div class="container">
-				<div class="footer-distributed">
-					<div class="footer-left">
-						<p class="footer-links">
-							<a href="{% url 'index' %}">Inicio</a>
-							<a href="{% url 'services' %}">Servicios</a>
-							<a href="{% url 'about' %}">Acerca de</a>
-							<a href="{% url 'barbers' %}">Nuestro Equipo</a>
-							<a href="{% url 'appointment' %}">Cita</a>
-							<a href="{% url 'contact' %}">Contacto</a>
-						</p>
-						<p class="footer-company-name">Todos los derechos reservados. &copy; 2024 <a href="{% url 'index' %}">Firenze</a></a></p>
-					</div>
-				</div>
-			</div><!-- end container -->
-		</div><!-- end copyrights -->
-
-    
+    <!-- Scroll to Top Button -->
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
-	<script src="{% static 'js/all.js' %}"></script>
-	<script src="{% static 'js/responsive-tabs.js' %}"></script>
-	<script src="{% static 'js/custom.js' %}"></script>
-	<script src="{% static 'js/map.js' %}"></script>
-    <!-- Menu Toggle Script -->
+    <!-- JavaScript Libraries -->
+
+    <script src="{% static 'js/responsive-tabs.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    
+    <!-- Google Maps API (antes de map.js) -->
+    <script src="{% static 'js/map.js' %}"></script>
+
+    <!-- Script para actualizar los horarios en función del servicio -->
     <script>
-    (function($) {
-        "use strict";
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
+        const availableTimes = {
+            'corte': ['10:00', '11:00', '14:00', '15:00'],
+            'perfilado': ['10:30', '11:30', '14:30', '15:30'],
+            'manicure': ['09:00', '13:00', '16:00'],
+            'pedicure': ['09:30', '13:30', '16:30']
+        };
+
+        document.getElementById('service').addEventListener('change', function() {
+            const selectedService = this.value;
+            const timeSelect = document.getElementById('appointment_time');
+            timeSelect.innerHTML = '<option value="" disabled selected>Selecciona Hora</option>';
+            
+            if (availableTimes[selectedService]) {
+                availableTimes[selectedService].forEach(function(time) {
+                    const option = document.createElement('option');
+                    option.value = time;
+                    option.textContent = time;
+                    timeSelect.appendChild(option);
+                });
+            }
         });
-        smoothScroll.init({
-            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
-            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
-            speed: 500, // Integer. How fast to complete the scroll in milliseconds
-            easing: 'easeInOutCubic', // Easing pattern to use
-            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
-            callback: function ( anchor, toggle ) {} // Function to run after scrolling
-        });
-    })(jQuery);
     </script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-	 
-	<script>
-		// Suponiendo que tienes un array con los horarios disponibles por servicio y fecha
-		const availableTimes = {
-			'corte': ['10:00', '11:00', '14:00', '15:00'],
-			'perfilado': ['10:30', '11:30', '14:30', '15:30'],
-			'manicure': ['09:00', '13:00', '16:00'],
-			'pedicure': ['09:30', '13:30', '16:30']
-		};
-		
-		// Al cambiar el servicio seleccionado
-		document.getElementById('service').addEventListener('change', function() {
-			const selectedService = this.value;
-			const timeSelect = document.getElementById('appointment_time');
-		
-			// Limpiar las opciones de hora
-			timeSelect.innerHTML = '<option value="" disabled selected>Selecciona la Hora</option>';
-		
-			// Llenar las horas disponibles según el servicio
-			if (availableTimes[selectedService]) {
-				availableTimes[selectedService].forEach(function(time) {
-					const option = document.createElement('option');
-					option.value = time;
-					option.textContent = time;
-					timeSelect.appendChild(option);
-				});
-			}
-		});
-	</script>
-	
+
 </body>
 </html>

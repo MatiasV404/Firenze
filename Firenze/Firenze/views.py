@@ -14,7 +14,7 @@ def index(request):
 def about(request):
     return render(request, 'about.html')
 
-
+@csrf_exempt
 def appointment(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
