@@ -35,11 +35,11 @@ def appointment(request):
             send_mail(
                 'Confirmación de cita',
                 f'Hola {first_name} {last_name},\n\nHas reservado el servicio: {service} para el {date} a las {time}.\nNo lo olvides.\n\nSaludos,\nFirenze Spa',
-                'cristiangaete32@gmail.com',  # Desde dónde se envía
+                'firenzespa2024@gmail.com',  # Desde dónde se envía
                 [email],  # A quién se envía
                 fail_silently=False,
             )
-            return HttpResponse("Cita solicitada con éxito.")
+            return render(request, 'index.html', {'success': True})
         except Exception as e:
             print(f"Error al enviar el correo: {e}")
             return HttpResponse("Error interno del servidor, no se pudo enviar el correo.", status=500)

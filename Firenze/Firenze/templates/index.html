@@ -116,7 +116,13 @@
 		
 	<!-- QUIENES SOMOS -->
 	<div id="page-content-wrapper">			
-			
+		{% if success %}
+		<div id="popup-success" style="display: none;">
+			<p>Solicitud enviada con éxito</p>
+			<button onclick="closePopup()">Cerrar</button>
+		</div>
+		{% endif %}
+		
 
 		<!-- PRECIOS  -->		
 		<div id="pricing" class="section lb">
@@ -438,7 +444,7 @@
 			</div><!-- end container -->
 		</div><!-- end section -->
 
-
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<!-- Footer -->
 		<div class="copyrights">
 			<div class="container">
@@ -456,7 +462,26 @@
 				</div>
 			</div><!-- end container -->
 		</div><!-- end copyrights -->
-
+		<script>
+			// Función para mostrar el popup
+			function showPopup() {
+				document.getElementById("popup-success").style.display = "block";
+			}
+		
+			// Función para cerrar el popup
+			function closePopup() {
+				document.getElementById("popup-success").style.display = "none";
+			}
+		
+			// Muestra el popup automáticamente al cargar la página, si existe
+			window.onload = function() {
+				var popup = document.getElementById("popup-success");
+				if (popup) {
+					showPopup();
+				}
+			};
+		</script>
+		
     
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
@@ -464,5 +489,6 @@
 	<script src="{% static 'js/responsive-tabs.js' %}"></script>
 	<script src="{% static 'js/custom.js' %}"></script>
 	<script src="{% static 'js/map.js' %}"></script>
+
 </body>
 </html>

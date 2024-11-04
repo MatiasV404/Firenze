@@ -120,6 +120,13 @@
                                     <div class="form-btn text-center">
                                         <button type="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Solicitar Cita</button>
                                     </div>
+                                      {% if success %}
+    <div id="popup-success" style="display: none;">
+        <p>Solicitud enviada con éxito</p>
+        <button onclick="closePopup()">Cerrar</button>
+    </div>
+    {% endif %}
+
                                 </fieldset>
                             </form>
                         </div>

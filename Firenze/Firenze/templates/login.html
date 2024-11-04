@@ -1,5 +1,4 @@
 {% load static %}
-{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,43 +71,42 @@
 	</header>
 	<!-- End header -->
 
-
-    <div id="login" class="section wb">
-        <div class="container">
-            <div class="section-title row text-center">
-                <div class="col-md-8 offset-md-2">
-                    <small>INICIA SESIÓN EN TU CUENTA</small>
-                    <h3>Login</h3>
-                </div>
-            </div><!-- end title -->
-    
-            <div class="row">
-                <div class="col-md-6 offset-md-3"> <!-- Ajustado a 6 columnas para centrar mejor -->
-                    <div class="login_form">
-                        <div id="message"></div>
-                        <form id="loginform" class="row" action="{% url 'login' %}" method="post">
-                            {% csrf_token %}
-                            <fieldset class="row">
-                                <div class="col-12 mb-3"> <!-- Espaciado inferior -->
-                                    <input type="text" name="username" id="username" class="form-control"
-                                           placeholder="Nombre de usuario" required>
-                                </div>
-                                <div class="col-12 mb-3"> <!-- Espaciado inferior -->
-                                    <input type="password" name="password" id="password" class="form-control"
-                                           placeholder="Contraseña" required>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" value="LOGIN" id="submit"
-                                            class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Iniciar sesión</button>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-    
+	<div id="login" class="section wb">
+		<div class="container">
+			<div class="section-title row text-center">
+				<div class="col-md-8 offset-md-2">
+					<small>INICIA SESIÓN EN TU CUENTA</small>
+					<h3>Login</h3>
+				</div>
+			</div><!-- end title -->
+	
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="login_form">
+						<div id="message"></div>
+						<form id="loginform" class="row" action="{% url 'login' %}" method="post">
+							{% csrf_token %}
+							<fieldset class="row">
+								<div class="col-12 mb-3">
+									<input type="text" name="username" id="username" class="form-control"
+										   placeholder="Nombre de usuario" required>
+								</div>
+								<div class="col-12 mb-3">
+									<input type="password" name="password" id="password" class="form-control"
+										   placeholder="Contraseña" required>
+								</div>
+								<div class="col-12 text-center">
+									<button type="submit" value="LOGIN" id="submit"
+											class="btn btn-light btn-radius btn-brd grd1 btn-block subt">Iniciar sesión</button>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div><!-- end col -->
+			</div><!-- end row -->
+		</div><!-- end container -->
+	</div><!-- end section -->
+	
 
 	<!-- Footer -->
 	<div class="copyrights">
