@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 	<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -34,36 +35,42 @@
 <body class="barber_version">
 
     <!-- Start header -->
-    <header class="top-navbar">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="{% url 'index' %}">
-                    <img src="{% static 'images/logo.png' %}" alt="" />
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar top-bar"></span>
-                    <span class="icon-bar middle-bar"></span>
-                    <span class="icon-bar bottom-bar"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbars-rs-food">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Nuestros servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'barbers' %}">Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'appointment' %}">Agenda tu cita</a></li>
-                        {% if user.is_authenticated %}
-                            <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
-                        {% else %}
-                            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- End header -->
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="{% url 'index' %}">
+					<img src="{% static 'images/logo.png' %}" alt="" />
+				</a>
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icon-bar top-bar"></span>
+					<span class="icon-bar middle-bar"></span>
+					<span class="icon-bar bottom-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Nuestros servicios</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'barbers' %}">Productos</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'appointment' %}">Agenda tu cita</a></li>
+						{% if user.is_authenticated %}
+							<li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
+						{% else %}
+							<li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
+							<li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
+						{% endif %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'carrito' %}">
+								<i class="fas fa-shopping-cart"></i> <!-- Icono de carrito, asegúrate de tener Font Awesome -->
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
 
 
     <div id="login" class="section wb">

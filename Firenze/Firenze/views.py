@@ -8,6 +8,10 @@ from .forms import ExtendedUserCreationForm
 from django.contrib.auth import login as auth_login, authenticate
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from .productos import productos
+
+from .models import Producto
+
 
 def index(request):
     return render(request, 'index.html')
@@ -42,8 +46,9 @@ def appointment(request):
 
     return render(request, 'appointment.html')
 
+
 def barbers(request):
-    return render(request, 'barbers.html')
+    return render(request, 'barbers.html', {'productos': productos})
 
 def registro(request):
     if request.method == 'POST':
@@ -76,3 +81,10 @@ def cerrar_sesion(request):
     if request.user.is_authenticated:
         logout(request)
     return redirect('index')
+
+
+def productos_view(request):
+    return render(request, 'productos.html', {'productos': productos})
+
+def carrito(request):
+    return render(request, 'carrito.html')

@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title and Meta Descriptions -->
+    <title>StyleBarber - Responsive Template</title>
+    <meta name="description" content="StyleBarber - Bootstrap 4 Responsive HTML5 Template">
+    <meta name="keywords" content="StyleBarber, barber, salon, HTML5, Bootstrap">
+    <meta name="author" content="">
+    <style>
+        #lista-carrito {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product {
+            margin: 0px;
+            flex: 0 1 calc(33.33% - 20px);
+        }
+
+        .table {
+            width: 100%;
+            margin: 0px 0px;
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
+            padding: 0px;
+        }
+
+        .table th {
+            background-color: #f8f9fa;
+            border-bottom: 0px solid black;
+        }
+
+        .card {
+            margin-top: 0px !important;
+        }
+    </style>
+    <!-- Favicon and Touch Icon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/all.js' %}"></script>
+    <script src="{% static 'js/responsive-tabs.js' %}"></script>
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="barber_version">
+
+    <!-- Start header -->
+    <header class="top-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbars-rs-food">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Nuestros servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'barbers' %}">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'appointment' %}">Agenda tu cita</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'carrito' %}">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
+
+    <div class="row justify-content-center" style="height: 100vh;">
+        <div id="lista-carrito" class="col-xs-12">
+            <div class="card text-center">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre del Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los productos del carrito se agregarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-between mb-3">
+                    <button id="vaciar-carrito" class="btn btn-danger">Vaciar Carrito</button>
+                    <a href="{% url 'index' %}" class="btn btn-success">Pagar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-links">
+                        <a href="{% url 'index' %}">Inicio</a>
+                        <a href="{% url 'services' %}">Servicios</a>
+                        <a href="{% url 'about' %}">Acerca de</a>
+                        <a href="{% url 'barbers' %}">Nuestro Equipo</a>
+                        <a href="{% url 'appointment' %}">Cita</a>
+                    </p>
+                    <p class="footer-company-name">Todos los derechos reservados. &copy; 2024 <a
+                            href="{% url 'index' %}">Firenze</a></a></p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <script src="{% static 'js/all.js' %}"></script>
+    <script src="{% static 'js/responsive-tabs.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+
+    <script>
+        // Mostrar los productos en el carrito
+        function mostrarCarrito() {
+            const listaCarrito = document.querySelector('#lista-carrito tbody');
+            const totalCarrito = document.getElementById('total-carrito');
+            listaCarrito.innerHTML = ''; // Limpiar la lista de productos
+
+            let total = 0;
+
+            carrito.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${item.nombre}</td>
+                    <td>${item.cantidad}</td>
+                    <td>$${(item.precio * item.cantidad).toFixed(2)}</td>
+                `;
+                listaCarrito.appendChild(tr);
+                total += item.precio * item.cantidad; // Calcular el total
+            });
+
+            // Actualiza el total en la parte inferior
+            totalCarrito.textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Función para eliminar un producto del carrito
+        function eliminarDelCarrito(nombre) {
+            carrito = carrito.filter(item => item.nombre !== nombre);
+            localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar localStorage
+            mostrarCarrito(); // Actualizar la vista del carrito
+        }
+
+        // Vaciar el carrito
+        const botonVaciar = document.getElementById('vaciar-carrito');
+        botonVaciar.addEventListener('click', () => {
+            carrito = []; // Vaciar el carrito
+            localStorage.removeItem('carrito'); // Limpiar localStorage
+            mostrarCarrito(); // Actualizar la vista del carrito
+        });
+
+        // Inicializar la vista del carrito al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            carrito = JSON.parse(localStorage.getItem('carrito')) || []; // Cargar el carrito desde localStorage
+            mostrarCarrito();
+        });
+
+        // Agregar funcionalidad de eliminar
+        document.addEventListener('click', (event) => {
+            if (event.target.classList.contains('eliminar')) {
+                const nombre = event.target.getAttribute('data-name');
+                eliminarDelCarrito(nombre);
+            }
+        });
+    </script>
+</body>
+
+</html>

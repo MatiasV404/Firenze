@@ -1,32 +1,34 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Page Title and Meta Descriptions -->
-    <title>StyleBarber - Responsive Template</title>
-    <meta name="description" content="StyleBarber - Bootstrap 4 Responsive HTML5 Template">
-    <meta name="keywords" content="StyleBarber, barber, salon, HTML5, Bootstrap">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <!-- Favicon and Touch Icon -->
-	 <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-	 <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
- 
-	 <!-- CSS Stylesheets -->
-	 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-	 <link rel="stylesheet" href="{% static 'css/versions.css' %}">
-	 <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-	 <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-	 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-	 <script src="{% static 'js/all.js' %}"></script>
-	 <script src="{% static 'js/responsive-tabs.js' %}"></script>
+	<!-- Page Title and Meta Descriptions -->
+	<title>StyleBarber - Responsive Template</title>
+	<meta name="description" content="StyleBarber - Bootstrap 4 Responsive HTML5 Template">
+	<meta name="keywords" content="StyleBarber, barber, salon, HTML5, Bootstrap">
+	<meta name="author" content="">
 
-    <!-- IE Compatibility Scripts -->
-    <!--[if lt IE 9]>
+	<!-- Favicon and Touch Icon -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/versions.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<script src="{% static 'js/all.js' %}"></script>
+	<script src="{% static 'js/responsive-tabs.js' %}"></script>
+
+	<!-- IE Compatibility Scripts -->
+	<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -59,6 +61,11 @@
 							<li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
 							<li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
 						{% endif %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'carrito' %}">
+								<i class="fas fa-shopping-cart"></i> <!-- Icono de carrito, asegúrate de tener Font Awesome -->
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -66,246 +73,111 @@
 	</header>
 	<!-- End header -->
 
-		<!-- Contenido de la Página -->
-		<div id="page-content-wrapper">
+	<!-- Sección de Productos de Barbería -->
+	<div id="barberia" class="section lb">
+		<div class="container">
+			<div class="section-title row text-center">
+				<div class="col-md-8 offset-md-2">
+					<h3>Nuestros Productos de Barbería</h3>
+					<hr class="grd1">
+					<p class="lead">Productos de alta calidad para mantener un estilo impecable en casa.</p>
+				</div>
+			</div>
 
-			<!-- Sección de Productos de Barbería -->
-			<div id="barberia" class="section lb">
-				<div class="container">
-					<div class="section-title row text-center">
-						<div class="col-md-8 offset-md-2">
-							<h3>Nuestros Productos de Barbería</h3>
-							<hr class="grd1">
-							<p class="lead">Productos de alta calidad para mantener un estilo impecable en casa.</p>
-						</div>
-					</div>
-
-					<div class="row flex-items-xs-middle flex-items-xs-center">
-						<!-- Crema para Peinar -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Crema para Peinar</h4>
-									<div class="line-pricing">
-										<p>Define tu estilo con nuestra crema para peinar, perfecta para cualquier tipo de cabello.</p>
-										<a href="#">$ 9.990</a>
-									</div>
-								</div>
+			<div class="row flex-items-xs-middle flex-items-xs-center">
+				{% for producto in productos %}
+				<div class="col-xs-12 col-lg-4">
+					<div class="card text-center">
+						<div class="card-block">
+							<h4 class="card-title pricing-ti">{{ producto.nombre }}</h4>
+							<div class="line-pricing">
+								<p>{{ producto.descripcion }}</p>
+								<button class="add-to-cart price-button" data-name="{{ producto.nombre }}" data-price="{{ producto.precio }}">
+									$ {{ producto.precio }}
+								</button>
 							</div>
 						</div>
-
-						<!-- Polvo Texturizador -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Polvo Texturizador</h4>
-									<div class="line-pricing">
-										<p>Aporta volumen y textura a tu cabello con este innovador polvo texturizador.</p>
-										<a href="#">$ 7.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Aceite para Barba -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Aceite para Barba</h4>
-									<div class="line-pricing">
-										<p>Hidrata y suaviza tu barba con nuestro aceite nutritivo, ideal para el cuidado diario.</p>
-										<a href="#">$ 11.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Cera para Cabello -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Cera para Cabello</h4>
-									<div class="line-pricing">
-										<p>Fijación fuerte y duradera con nuestra cera, perfecta para estilos más elaborados.</p>
-										<a href="#">$ 8.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Gel para Cabello -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Gel para Cabello</h4>
-									<div class="line-pricing">
-										<p>Fijación extrema y brillo con nuestro gel, ideal para mantener tu look todo el día.</p>
-										<a href="#">$ 6.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Balsamo para Barba -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Bálsamo para Barba</h4>
-									<div class="line-pricing">
-										<p>Controla el frizz y da forma a tu barba con nuestro bálsamo enriquecido.</p>
-										<a href="#">$ 10.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div><!-- end row -->
-				</div><!-- end container -->
-			</div><!-- end section -->
-
-			<!-- Sección de Productos de Manicura -->
-			<div id="manicura" class="section lb">
-				<div class="container">
-					<div class="section-title row text-center">
-						<div class="col-md-8 offset-md-2">
-							<h3>Nuestros Productos de Manicura</h3>
-							<hr class="grd1">
-							<p class="lead">Mantén tus manos y uñas en perfecto estado con nuestros productos.</p>
-						</div>
-					</div>
-
-					<div class="row flex-items-xs-middle flex-items-xs-center">
-						<!-- Crema Hidratante para Manos -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Crema Hidratante para Manos</h4>
-									<div class="line-pricing">
-										<p>Hidratación profunda para manos secas y agrietadas.</p>
-										<a href="#">$ 9.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Esmalte de Uñas -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Esmalte de Uñas</h4>
-									<div class="line-pricing">
-										<p>Colores vibrantes y de larga duración para lucir unas manos perfectas.</p>
-										<a href="#">$ 4.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Limador de Uñas -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Limador de Uñas</h4>
-									<div class="line-pricing">
-										<p>Herramienta esencial para dar forma y suavizar los bordes de las uñas.</p>
-										<a href="#">$ 2.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Aceite para Cutículas -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Aceite para Cutículas</h4>
-									<div class="line-pricing">
-										<p>Nutre y suaviza las cutículas, ayudando a mantenerlas saludables.</p>
-										<a href="#">$ 3.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Removedor de Esmalte -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Removedor de Esmalte</h4>
-									<div class="line-pricing">
-										<p>Elimina el esmalte de forma efectiva sin dañar las uñas.</p>
-										<a href="#">$ 2.490</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Kit de Manicura -->
-						<div class="col-xs-12 col-lg-4">
-							<div class="card text-center">
-								<div class="card-block">
-									<h4 class="card-title pricing-ti">Kit de Manicura</h4>
-									<div class="line-pricing">
-										<p>Todo lo que necesitas para el cuidado de tus uñas en un solo kit.</p>
-										<a href="#">$ 15.990</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div><!-- end row -->
-				</div><!-- end container -->
-			</div><!-- end section -->
-		</div><!-- end page-content-wrapper -->
-
-
-
-		<!-- Footer -->
-		<div class="copyrights">
-			<div class="container">
-				<div class="footer-distributed">
-					<div class="footer-left">
-						<p class="footer-links">
-							<a href="{% url 'index' %}">Inicio</a>
-							<a href="{% url 'services' %}">Servicios</a>
-							<a href="{% url 'about' %}">Acerca de</a>
-							<a href="{% url 'barbers' %}">Nuestro Equipo</a>
-							<a href="{% url 'appointment' %}">Cita</a>
-						</p>
-						<p class="footer-company-name">Todos los derechos reservados. &copy; 2024 <a href="{% url 'index' %}">Firenze</a></a></p>
 					</div>
 				</div>
-			</div><!-- end container -->
-		</div><!-- end copyrights -->
+				{% endfor %}
+			</div><!-- end row -->
+			
+
+	<!-- Footer -->
+	<div class="copyrights">
+		<div class="container">
+			<div class="footer-distributed">
+				<div class="footer-left">
+					<p class="footer-links">
+						<a href="{% url 'index' %}">Inicio</a>
+						<a href="{% url 'services' %}">Servicios</a>
+						<a href="{% url 'about' %}">Acerca de</a>
+						<a href="{% url 'barbers' %}">Nuestro Equipo</a>
+						<a href="{% url 'appointment' %}">Cita</a>
+					</p>
+					<p class="footer-company-name">Todos los derechos reservados. &copy; 2024 <a
+							href="{% url 'index' %}">Firenze</a></a></p>
+				</div>
+			</div>
+		</div><!-- end container -->
+	</div><!-- end copyrights -->
 
 	</div>
-   
 
-    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+	<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
 	<script src="{% static 'js/all.js' %}"></script>
 	<script src="{% static 'js/responsive-tabs.js' %}"></script>
 	<script src="{% static 'js/custom.js' %}"></script>
-	<script src="{% static 'js/map.js' %}"></script>
 
-    <!-- Menu Toggle Script -->
-    <script>
-    (function($) {
-        "use strict";
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-        smoothScroll.init({
-            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
-            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
-            speed: 500, // Integer. How fast to complete the scroll in milliseconds
-            easing: 'easeInOutCubic', // Easing pattern to use
-            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
-            callback: function ( anchor, toggle ) {} // Function to run after scrolling
-        });
-    })(jQuery);
-    </script>
+	<script>
+		// Inicializar carrito
+		let carrito = [];
+	
+		// Cargar el carrito del local storage al inicio
+		if (localStorage.getItem('carrito')) {
+			carrito = JSON.parse(localStorage.getItem('carrito'));
+		}
+	
+		// Guardar el carrito en local storage
+		function guardarCarrito() {
+			localStorage.setItem('carrito', JSON.stringify(carrito));
+		}
+	
+		// Función para agregar un producto al carrito
+		function agregarAlCarrito(nombre, precio) {
+			const productoExistente = carrito.find(item => item.nombre === nombre);
+	
+			if (productoExistente) {
+				// Si el producto ya existe, aumentar la cantidad
+				productoExistente.cantidad += 1;
+			} else {
+				// Si no existe, agregar un nuevo objeto al carrito
+				carrito.push({ nombre: nombre, precio: precio, cantidad: 1 });
+			}
+	
+			// Mostrar popup
+			alert(`Has agregado ${nombre} al carrito.`);
+			guardarCarrito(); // Guardar el carrito actualizado
+		}
+	
+		// Asignar evento click a los botones de agregar al carrito
+		document.addEventListener('DOMContentLoaded', () => {
+			const botonesAgregar = document.querySelectorAll('.add-to-cart');
+	
+			botonesAgregar.forEach(boton => {
+				boton.addEventListener('click', (event) => {
+					const nombre = event.target.getAttribute('data-name');
+					const precio = parseFloat(event.target.getAttribute('data-price'));
+					agregarAlCarrito(nombre, precio);
+				});
+			});
+		});
+	</script>
+	
+	
 
 </body>
+
 </html>

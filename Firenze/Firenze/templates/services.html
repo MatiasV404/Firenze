@@ -23,6 +23,7 @@
 	 <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 	 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- IE Compatibility Scripts -->
     <!--[if lt IE 9]>
@@ -60,6 +61,11 @@
 							<li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
 							<li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
 						{% endif %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'carrito' %}">
+								<i class="fas fa-shopping-cart"></i> <!-- Icono de carrito, asegúrate de tener Font Awesome -->
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
